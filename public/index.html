@@ -10,21 +10,44 @@
       }
 
       #wrapper {
-        width: 960px;
+        width: 1200px;
         margin-left: auto;
         margin-right: auto;
         padding-top: 5%;
       }
       #articles {
+        padding-left: 15%; 
         display: inline-block;
         overflow: auto;
         width: 60%;
         height: 700px;
       }
+
+  .zoom {
+    padding: 50px;
+    transition: transform .2s;
+    /* Animation */
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .zoom:hover {
+    transform: scale(6);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+
       #notes {
         float: right;
         width: 30%;
       }
+
+      i {
+        font-size: 18px;
+        fon
+      }
+
       textarea, input {
         display: block;
         width: 100%;
