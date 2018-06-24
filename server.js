@@ -27,7 +27,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/");
+mongoose.connect("mongodb://localhost/news");
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://heroku_stsfjsxn:4rtde9u3sqci1b5u4dfsdlngoc@ds217351.mlab.com:17351/heroku_stsfjsxn');
 
 // Routes
 
